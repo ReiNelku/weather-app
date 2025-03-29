@@ -1,0 +1,80 @@
+:root {
+  --body-background-color: #fffffe;
+  --header-title-color: #094067;
+  --header-description-color: #5f6c7b;
+  --header-button-color: #3da9fc;
+  --header-button-text-color: #fffffe;
+  --header-temp-unit-C-color: #ef4565;
+  --header-temp-unit-F-color: #094067;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 12px;
+  font-family: system-ui, sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  background-color: var(--body-background-color);
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  align-self: center;
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.title > h1 {
+  font-size: 3rem;
+  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
+    Arial, sans-serif;
+  color: var(--header-title-color);
+}
+
+.title > p {
+  height: 1.5rem;
+  font-size: 1.5rem;
+  font-family: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
+  color: var(--header-description-color);
+}
+
+form {
+  display: flex;
+  gap: 1.5rem;
+}
+
+form > input {
+  font-size: 2rem;
+}
+
+form > button {
+  padding: 1rem 1.5rem;
+  border: 0;
+  border-radius: 8px;
+  background-color: var(--header-button-color);
+  color: var(--header-button-text-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+form > .temp-unit[value="C"] {
+  background-color: var(--header-temp-unit-C-color);
+}
+
+form > .temp-unit[value="F"] {
+  background-color: var(--header-temp-unit-F-color);
+}
