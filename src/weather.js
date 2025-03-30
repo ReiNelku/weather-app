@@ -15,6 +15,7 @@ export function getWeatherToday(weatherData) {
   const todayWeather = {
     condition: weatherData.currentConditions.conditions,
     description: weatherData.description,
+    icon: weatherData.currentConditions.icon,
     feelslike: weatherData.currentConditions.feelslike,
     temperature: weatherData.currentConditions.temp,
     address: weatherData.resolvedAddress,
@@ -31,6 +32,8 @@ export function getWeatherWeek(weatherData) {
     let day = {};
 
     day.condition = weatherData.days[i].conditions;
+    day.datetime = weatherData.days[i].datetime;
+    day.icon = weatherData.days[i].icon;
     day.feelslike = weatherData.days[i].feelslike;
     day.temperature = weatherData.days[i].temp;
     day.windspeed = weatherData.days[i].windspeed;
