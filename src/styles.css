@@ -6,6 +6,10 @@
   --header-button-text-color: #fffffe;
   --header-temp-unit-C-color: #ef4565;
   --header-temp-unit-F-color: #094067;
+  --card-border-color: #094067;
+  --card-title-color: #094067;
+  --card-info-color: #5f6c7b;
+  --week-title-color: #094067;
 }
 
 * {
@@ -25,6 +29,7 @@ button {
 }
 
 body {
+  min-height: 100%;
   background-color: var(--body-background-color);
   display: flex;
   flex-direction: column;
@@ -35,17 +40,20 @@ header {
   padding: 1.5rem 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
 }
 
 .title > h1 {
-  font-size: 3rem;
+  text-align: center;
+  font-size: 4rem;
   font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
     Arial, sans-serif;
   color: var(--header-title-color);
 }
 
 .title > p {
+  text-align: center;
   height: 1.5rem;
   font-size: 1.5rem;
   font-family: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
@@ -77,4 +85,85 @@ form > .temp-unit[value="C"] {
 
 form > .temp-unit[value="F"] {
   background-color: var(--header-temp-unit-F-color);
+}
+
+main {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.today {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.card {
+  height: 250px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid var(--card-border-color);
+  border-radius: 8px;
+  gap: 1rem;
+}
+
+.card-title {
+  color: var(--card-title-color);
+  font-size: 2.5rem;
+  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
+    Arial, sans-serif;
+}
+
+.card-icon {
+  height: 66px;
+  padding: 8px;
+  border: 2px solid var(--card-border-color);
+  border-radius: 8px;
+}
+
+.card-info,
+.card-condition {
+  color: var(--card-info-color);
+  font-family: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 1.2rem;
+}
+
+.week > h2 {
+  text-align: center;
+  color: var(--week-title-color);
+  font-size: 3rem;
+  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
+    Arial, sans-serif;
+  padding-bottom: 2rem;
+}
+
+.week-cards {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  justify-items: center;
+}
+
+.error {
+  text-align: center;
+  font-size: 4rem;
+  color: red;
+}
+
+.loading {
+  text-align: center;
+  font-size: 4rem;
+  color: black;
 }
